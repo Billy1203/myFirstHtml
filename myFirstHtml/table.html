@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="table.css" />
+    <title>myBookList</title>
+    <script type="text/javascript" src="table.js"></script>
+</head>
+<body onload = "initial()">
+<table>
+
+    <caption id="a"> <h2>BookList</h2> </caption>
+    <tr>
+        <th>Bookname</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Date of Purchase</th>
+        <th>Category</th>
+        <th>Delete</th>
+    </tr>
+
+    <tbody id = "tbody" style = "display:none">
+    <tr>
+        <td><input type = "button" value = "Delete" onClick="removeRow(this)"/></td>
+    </tr>
+    </tbody>
+
+</table>
+
+<div>
+    <form name="form1">
+        Bookname: <input type = "text" name = "bookname" placeholder = "Bookname"/><br>
+        Author: <input type = "text" name = "author" placeholder="Author"/><br>
+        Price: <input type = "text" name = "price" placeholder="Price"/><br>
+        Category:
+        <label class="label">
+        <input class = "radio" type = "radio" name = "category" value = "Chinese">
+        <span class = "radioInput"></span>Chinese
+    </label>
+        <label class = "label">
+            <input class = "radio" type = "radio" name = "category" value = "Math">
+            <span class = "radioInput"></span>Math
+        </label>
+        <label class = "label">
+            <input class = "radio" type = "radio" name = "category" value = "English">
+            <span class = "radioInput"></span>English
+        </label><br>
+        Date: <select id = "year" onChange = "setMonth()"></select> year
+        <select id = "month" onChange = "setDay()"></select> month
+        <select id = "day"></select> day <br>
+        <input type = "button" value = "Add Book" class="add-button" onclick = "onClickAddBook()">
+    </form>
+</div>
+</body>
+</html>
